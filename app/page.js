@@ -18,7 +18,7 @@ export default function Home() {
         {/* Examples */}
         <div className="flex flex-row space-x-2 mx-2">
           <div className="flex flex-row justify-center items-center w-full h-1/2">
-            <div className="flex flex-col justify-center items-center  h-full text-slate-600">
+            <div className="flex flex-col justify-center items-center h-full text-slate-600">
               <SunIcon className="h-8 w-8" />
               <h2 className="text-xl mb-3">Examples</h2>
               <div className="flex flex-col text-sm text-slate-800 space-y-3 text-center">
