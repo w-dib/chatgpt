@@ -22,16 +22,16 @@ export default function Home() {
               <SunIcon className="h-8 w-8" />
               <h2 className="text-xl mb-3">Examples</h2>
               <div className="flex flex-col text-sm text-slate-800 space-y-3 text-center">
-                <p className="bg-slate-100 border border-transparent py-3 px-2 min-w-full rounded-md">
+                <div className="bg-slate-100 border border-transparent py-3 px-2 min-w-full rounded-md cursor-pointer">
                   &quot;Explain quantum computing in simple terms&quot; →
-                </p>
-                <p className="bg-slate-100 border border-transparent py-3 px-2 min-w-full rounded-md">
+                </div>
+                <div className="bg-slate-100 border border-transparent py-3 px-2 min-w-full rounded-md cursor-pointer">
                   &quot;Got any creative ideas for a 10 year old&apos;s
                   birthday?&quot; →
-                </p>
-                <p className="bg-slate-100 border border-transparent py-3 px-2 min-w-full rounded-md">
+                </div>
+                <div className="bg-slate-100 border border-transparent py-3 px-2 min-w-full rounded-md cursor-pointer">
                   &quot;How do I make an HTTP request in Javascript?s&quot; →
-                </p>
+                </div>
               </div>
             </div>
           </div>
