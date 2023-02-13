@@ -2,11 +2,25 @@
 import { ArrowLeftOnRectangleIcon } from "@heroicons/react/24/outline";
 import { PlusIcon } from "@heroicons/react/24/solid";
 import { useSession, signOut } from "next-auth/react";
+import { useRouter } from "next/navigation";
+import { addDoc, collection, serverTimestamp } from "firebase/firestore";
+import { db } from "@/lib/firebase";
 
 function Sidebar() {
   const { data: session } = useSession();
+  const router = useRouter();
+  const createNewChat = async () => {
+    const doc = await addDoc(collection(db, "chats"), {
+      userId: session.user.email,
+      createdAt: serverTimestamp(),
+    });
+    router.push(`/chat/${doc.id}`);
+  };
   return (
-    <div className="px-2 flex flex-col h-screen justify-between">
+    <div
+      onClick={createNewChat}
+      className="px-2 flex flex-col h-screen justify-between"
+    >
       <div>
         {/* New Chat */}
         <div className="flex justify-center mt-3 py-2 px-16 text-white border rounded-lg border-white cursor-pointer hover:bg-slate-400 hover:border-slate-400 ease-in-out duration-300">
