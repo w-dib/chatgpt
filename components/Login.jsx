@@ -10,7 +10,7 @@ function Login() {
         onClick={() => signIn("google")}
         className="text-white font-bold text-3xl animate-pulse"
       >
-        Sign in to use WalidGPT
+        Sign in with Google to use WalidGPT
       </button>
     </div>
   );
