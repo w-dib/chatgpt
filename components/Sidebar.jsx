@@ -3,7 +3,13 @@ import { ArrowLeftOnRectangleIcon } from "@heroicons/react/24/outline";
 import { PlusIcon } from "@heroicons/react/24/solid";
 import { useSession, signOut } from "next-auth/react";
 import { useRouter } from "next/navigation";
-import { addDoc, collection, serverTimestamp } from "firebase/firestore";
+import {
+  addDoc,
+  collection,
+  orderBy,
+  query,
+  serverTimestamp,
+} from "firebase/firestore";
 import { db } from "@/lib/firebase";
 import { useCollection } from "react-firebase-hooks/firestore";
 import ChatRow from "./ChatRow";
@@ -23,7 +29,11 @@ function Sidebar() {
   };
 
   const [chats, loading, error] = useCollection(
-    session && collection(db, "users", session.user.email, "chats")
+    session &&
+      query(
+        collection(db, "users", session.user.email, "chats"),
+        orderBy("createdAt", "asc")
+      )
   );
 
   return (
@@ -33,7 +43,7 @@ function Sidebar() {
         {/* New Chat */}
         <div
           onClick={createNewChat}
-          className="flex justify-center mt-3 py-2 px-16 text-white border rounded-lg border-white cursor-pointer hover:bg-slate-400 hover:border-slate-400 ease-in-out duration-300"
+          className="flex justify-center my-3 py-2 px-16 text-white border rounded-lg border-white cursor-pointer hover:bg-slate-400 hover:border-slate-400 ease-in-out duration-300"
         >
           <PlusIcon className="h-6 w-6 mr-2" />
           <h1 className="">New chat</h1>
