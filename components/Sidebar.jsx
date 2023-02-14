@@ -41,7 +41,7 @@ function Sidebar() {
         {/* Modal selection */}
 
         {/* Map through chat rows */}
-        {chats.docs.map((chat) => (
+        {chats?.docs.map((chat) => (
           <ChatRow key={chat.id} id={chat.id} users={chat.data().users} />
         ))}
       </div>
