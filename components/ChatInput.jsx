@@ -22,6 +22,7 @@ function ChatInput({ chatId }) {
       user: {
         _id: session?.user.email,
         name: session?.user.name,
+        avatar: 
       },
     };
 
@@ -58,7 +59,7 @@ function ChatInput({ chatId }) {
   };
 
   return (
-    <div className="bg-gray-100 text-gray-600 rounded-lg text-sm outline-none mb-5 mx-2">
+    <div className="bg-gray-300/40 text-gray-600 rounded-lg text-sm outline-none mb-5 mx-2">
       <form onSubmit={sendMessage} className="p-5 space-x-5 flex">
         <input
           className="flex-1 outline-none bg-transparent disabled:cursor-not-allowed disabled:text-gray-200"
