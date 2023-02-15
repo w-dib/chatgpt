@@ -37,8 +37,8 @@ function Sidebar() {
   );
 
   return (
-    <div className="px-2 flex flex-col h-screen justify-between">
-      <div>
+    <div className="px-2 flex flex-col h-screen">
+      <div className="flex-1">
         {/* START TOP DIV */}
         {/* New Chat */}
         <div
@@ -48,7 +48,7 @@ function Sidebar() {
           <PlusIcon className="h-6 w-6 mr-2" />
           <h1 className="">New chat</h1>
         </div>
-        {/* Modal selection */}
+        {/* Model selection */}
 
         {/* Map through chat rows */}
         {chats?.docs.map((chat) => (
@@ -61,7 +61,7 @@ function Sidebar() {
       {/* Log out button */}
       <div
         onClick={() => signOut()}
-        className="flex justify-center mx-auto mb-3 py-2 px-16 text-white cursor-pointer"
+        className="flex justify-center mx-auto mb-9 py-2 px-16 text-white cursor-pointer"
       >
         <ArrowLeftOnRectangleIcon className="h-6 w-6 mr-2" />
         <h1 className="">Log out</h1>

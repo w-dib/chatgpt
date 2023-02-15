@@ -1,11 +1,13 @@
 import Chat from "@/components/Chat";
+import ChatInput from "@/components/ChatInput";
 
-function ChatPage() {
+function ChatPage({ params: { id } }) {
   return (
-    <div className="flex flex-col h-scren overflow-hidden">
+    <div className="flex flex-col h-screen overflow-hidden">
       {/* Chat */}
-      <Chat />
+      <Chat chatId={id} />
       {/* Chat Input */}
+      <ChatInput chatId={id} />
     </div>
   );
 }

@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 "use client";
 import { db } from "@/lib/firebase";
 import { ChatBubbleLeftIcon, TrashIcon } from "@heroicons/react/24/outline";
