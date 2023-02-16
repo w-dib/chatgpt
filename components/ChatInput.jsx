@@ -62,7 +62,7 @@ function ChatInput({ chatId }) {
     <div className="bg-gray-300/40 text-gray-600 rounded-lg text-sm outline-none mb-5 mx-2">
       <form onSubmit={sendMessage} className="p-5 space-x-5 flex">
         <input
-          className="flex-1 outline-none bg-transparent disabled:cursor-not-allowed disabled:text-gray-200"
+          className="flex-1 focus:outline-none border-none bg-transparent disabled:cursor-not-allowed disabled:text-gray-200"
           value={prompt}
           onChange={(e) => setPrompt(e.target.value)}
           type="text"

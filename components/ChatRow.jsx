@@ -31,12 +31,12 @@ function ChatRow({ id }) {
   return (
     <Link
       href={`/chat/${id}`}
-      className={`chatRow justify-center ${
+      className={`chatRow mb-2 md:mb-0 justify-center ${
         isActive && "bg-slate-400/25 text-white"
       }`}
     >
       <ChatBubbleLeftIcon className="h-5 w-5" />
-      <p className="flex-1 hidden md:inline-flex truncate">
+      <p className="flex-1 md:inline-flex truncate">
         {messages?.docs[messages.docs.length - 1]?.data().text || "New Chat"}
       </p>
       <TrashIcon

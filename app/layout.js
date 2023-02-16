@@ -17,8 +17,8 @@ export default async function RootLayout({ children }) {
           {!session ? (
             <Login />
           ) : (
-            <div className="flex">
-              <div className="bg-slate-500 overflow-y-auto max-w-xs h-screen md:min-w-[20rem]">
+            <div className="flex flex-col md:flex-row">
+              <div className="bg-slate-500 overflow-y-auto md:h-screen md:min-w-[20rem]">
                 <Sidebar />
               </div>
 
@@ -29,6 +29,7 @@ export default async function RootLayout({ children }) {
             </div>
           )}
         </SessionProvider>
+        {/* <script src="../path/to/flowbite/dist/flowbite.min.js" /> */}
       </body>
     </html>
   );

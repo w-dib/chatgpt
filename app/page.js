@@ -16,7 +16,7 @@ export default function Home() {
         {/* Examples, Capabilities, Limitations div - flex row of 3 divs, each being a flex col */}
 
         {/* Examples */}
-        <div className="flex flex-row space-x-2 mx-2">
+        <div className="flex flex-col md:flex-row space-x-2 mx-2">
           <div className="flex flex-row justify-center items-center w-full h-1/2">
             <div className="flex flex-col justify-center items-center h-full text-slate-600">
               <SunIcon className="h-8 w-8" />
