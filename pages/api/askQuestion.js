@@ -1,6 +1,6 @@
 import { adminDb } from "@/lib/firebaseAdmin";
 import query from "@/lib/queryApi";
-import { admin } from "firebase-admin";
+import admin from "firebase-admin";
 
 export default async function handler(req, res) {
   const { prompt, chatId, model, session } = req.body;
