@@ -1,4 +1,4 @@
-function Chat(chatId) {
+function Chat({ chatId }) {
   return <div className="flex-1">Chat</div>;
 }
 
