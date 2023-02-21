@@ -1,4 +1,6 @@
+import { adminDb } from "@/lib/firebaseAdmin";
 import query from "@/lib/queryApi";
+import { admin } from "firebase-admin";
 
 export default async function handler(req, res) {
   const { prompt, chatId, model, session } = req.body;
@@ -19,6 +21,21 @@ export default async function handler(req, res) {
 
   const message = {
     text: response || "chatGPT was unable to respond.",
+    createdAt: admin.firestore.Timestamp.now(),
+    user: {
+      _id: "ChatGPT",
+      name: "ChatGPT",
+      avatar: "links.papareact.com/89k",
+    },
   };
-  res.status(200).json({ name: "John Doe" });
+
+  await adminDb
+    .collection("users")
+    .doc(session?.user?.email)
+    .collection("chats")
+    .doc(chatId)
+    .collection("messages")
+    .add(message);
+
+  res.status(200).json({ answer: message.text });
 }
