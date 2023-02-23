@@ -1,5 +1,10 @@
+"use client";
 import Chat from "@/components/Chat";
 import ChatInput from "@/components/ChatInput";
+import { db } from "@/lib/firebase";
+import { collection, query, orderBy } from "firebase/firestore";
+import { useSession } from "next-auth/react";
+import { useCollection } from "react-firebase-hooks/firestore";
 
 function ChatPage({ params: { id } }) {
   return (
