@@ -3,6 +3,7 @@ import { db } from "@/lib/firebase";
 import { collection, orderBy, query } from "firebase/firestore";
 import { useSession } from "next-auth/react";
 import { useCollection } from "react-firebase-hooks/firestore";
+import Message from "./Message";
 
 function Chat({ chatId }) {
   const { data: session } = useSession();
@@ -22,7 +23,11 @@ function Chat({ chatId }) {
       )
   );
   return (
-    <div className="flex-1">{/* {messages?.docs.map((message) => ())} */}</div>
+    <div className="flex-1">
+      {messages?.docs.map((message) => (
+        <Message key={message.id} {...message.data()} />
+      ))}
+    </div>
   );
 }
 

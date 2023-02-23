@@ -39,7 +39,7 @@ function Sidebar() {
   );
 
   return (
-    <div className="px-2 flex flex-col md:h-screen">
+    <div className="px-2 flex flex-col md:h-screen max-w-xs">
       <div className="md:flex-1">
         {/* START TOP DIV */}
         {/* New Chat */}
