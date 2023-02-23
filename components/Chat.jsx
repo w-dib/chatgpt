@@ -24,13 +24,13 @@ function Chat({ chatId }) {
       )
   );
   return (
-    <div className="flex-1 overflow-y-auto overflow-hidden">
-      {/* {messages?.empty && (
+    <div className="flex-1 overflow-y-auto overflow-hidden text-slate-700">
+      {messages?.empty && (
         <>
           <p className="mt-10 text-center">Type a prompt to get started...</p>
           <ArrowDownCircleIcon className="h-10 w-10 mx-auto mt-5 animate-bounce" />
         </>
-      )} */}
+      )}
       {messages?.docs.map((message) => (
         <Message key={message.id} {...message.data()} />
       ))}
