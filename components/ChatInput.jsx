@@ -9,7 +9,7 @@ import { toast } from "react-hot-toast";
 function ChatInput({ chatId }) {
   const [prompt, setPrompt] = useState("");
   const { data: session } = useSession();
-  const model = "davinci";
+  const model = "text-davinci-003";
 
   const sendMessage = async (e) => {
     e.preventDefault();
@@ -59,8 +59,11 @@ function ChatInput({ chatId }) {
   };
 
   return (
-    <div className="bg-gray-300/40 text-gray-600 rounded-lg text-sm outline-none mb-5 mx-2">
-      <form onSubmit={sendMessage} className="p-5 space-x-5 flex">
+    <div className="bg-inherit sticky bottom-2 md:bottom-3 text-gray-600 rounded-lg text-sm outline-none mx-2 z-40">
+      <form
+        onSubmit={sendMessage}
+        className="p-5 space-x-5 flex bg-white rounded-lg shadow-sm"
+      >
         <input
           className="flex-1 focus:outline-none border-none bg-transparent disabled:cursor-not-allowed disabled:text-gray-200"
           value={prompt}
